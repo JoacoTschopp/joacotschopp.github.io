@@ -182,14 +182,55 @@
             font-size: 0.75rem;
             color: var(--muted);
         }
+
+        /* Nuevo estilo para el contenedor de foto + texto */
+        .header-content {
+            display: flex;
+            align-items: center; /* Centra verticalmente */
+            gap: 1.5rem; /* Espacio entre foto y texto */
+            margin-bottom: 1.2rem;
+        }
+
+        /* Estilo de la foto */
+        .profile-pic {
+            width: 110px;        /* Tamaño ajustable */
+            height: 110px;
+            border-radius: 50%;  /* Esto la hace redonda */
+            object-fit: cover;   /* Asegura que no se deforme */
+            border: 3px solid var(--accent); /* Un borde con tu color de acento */
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+        }
+
+        .header-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+        
+        /* Ajuste para móviles (para que se apilen si la pantalla es chica) */
+        @media (max-width: 600px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .profile-img {
+                width: 130px; /* Un poco más grande en móvil para que destaque */
+                height: 130px;
+            }
+        }
+        
     </style>
 </head>
 <body>
 <div class="page">
     <header>
-        <div>
-            <h1>Joaquín Tschopp</h1>
-            <p class="subtitle">Backend &amp; AI Engineer · Applied Machine Learning · Generative AI Systems</p>
+        <div class="header-profile">
+            <img src="./Tschopp_Joaquin.jpg" alt="Joaquín Tschopp" class="profile-img" />
+        
+            <div class="header-info">
+                <h1>Joaquín Tschopp</h1>
+                <p class="subtitle">Backend &amp; AI Engineer · Applied Machine Learning · Generative AI Systems</p>
+            </div>
         </div>
         <p class="summary">
             Backend and AI Engineer specialized in applied Machine Learning and production-grade generative AI systems.
